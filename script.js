@@ -21,6 +21,14 @@ function playRound(playerSelect, computerSelect) {
     }
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        
+    }
+}
+
+/*
 const playerSelect = "Scissors";
 const computerSelect = computerPlay();
 console.log(playRound(playerSelect, computerSelect));
+*/
