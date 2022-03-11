@@ -1,27 +1,25 @@
-
 function computerPlay() {
     let choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
-    if ((playerSelection == 'Rock' && computerSelection == 'Scissors') ||
-        (playerSelection == 'Paper' && computerSelection == 'Rock') ||
-        (playerSelection == 'Scissors' && computerSelection == 'Paper')) {
-            return ('You Win! ' + playerSelection + ' beats ' + computerSelection)
+function playRound(playerSelect, computerSelect) {
+    if ((playerSelect == 'Rock' && computerSelect == 'Scissors') ||
+        (playerSelect == 'Paper' && computerSelect == 'Rock') ||
+        (playerSelect == 'Scissors' && computerSelect == 'Paper')) {
+            result = ('You Win! ' + playerSelect + ' beats ' + computerSelect)
     }
 
-    else if ((playerSelection == 'Rock' && computerSelection == 'Paper') ||
-    (playerSelection == 'Paper' && computerSelection == 'Scissors') ||
-    (playerSelection == 'Scissors' && computerSelection == 'Rock')) {
-        return ('You Lose! ' + computerSelection + ' beats ' + playerSelection)
-}
-
-    else if (playerSelection == computerSelection); {
-        return ('Draw!')
+    else if ((playerSelect == 'Rock' && computerSelect == 'Paper') ||
+    (playerSelect == 'Paper' && computerSelect == 'Scissors') ||
+    (playerSelect == 'Scissors' && computerSelect == 'Rock')) {
+        result = ('You Lose! ' + computerSelect + ' beats ' + playerSelect)
     }
-}
 
-const playerSelection = "Rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+    else if (playerSelect == computerSelect); {
+        result = ('Draw!')
+    }
+
+    document.getElementById('result').innerHTML = result
+    return
+}
