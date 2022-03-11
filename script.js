@@ -7,19 +7,20 @@ function playRound(playerSelect, computerSelect) {
     if ((playerSelect == 'Rock' && computerSelect == 'Scissors') ||
         (playerSelect == 'Paper' && computerSelect == 'Rock') ||
         (playerSelect == 'Scissors' && computerSelect == 'Paper')) {
-            result = ('You Win! ' + playerSelect + ' beats ' + computerSelect)
+            return ('You Win! ' + playerSelect + ' beats ' + computerSelect)
     }
 
     else if ((playerSelect == 'Rock' && computerSelect == 'Paper') ||
     (playerSelect == 'Paper' && computerSelect == 'Scissors') ||
     (playerSelect == 'Scissors' && computerSelect == 'Rock')) {
-        result = ('You Lose! ' + computerSelect + ' beats ' + playerSelect)
+        return ('You Lose! ' + computerSelect + ' beats ' + playerSelect)
     }
 
     else if (playerSelect == computerSelect); {
-        result = ('Draw!')
+        return ('Draw!')
     }
-
-    document.getElementById('result').innerHTML = result
-    return
 }
+
+const playerSelect = "Scissors";
+const computerSelect = computerPlay();
+console.log(playRound(playerSelect, computerSelect));
