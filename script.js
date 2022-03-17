@@ -9,36 +9,50 @@ function computerPlay() {
 
 //play one round of rps
 function playRound(playerSelect, computerSelect) {
-    computerSelect = computerPlay();
-
     if ((playerSelect == 'Rock' && computerSelect == 'Scissors') ||
         (playerSelect == 'Paper' && computerSelect == 'Rock') ||
         (playerSelect == 'Scissors' && computerSelect == 'Paper')) {
-            return ('You Win! ' + playerSelect + ' beats ' + computerSelect)
+            console.log('You Win! ' + playerSelect + ' beats ' + computerSelect);
+            playerScore++;
     }
 
     else if ((playerSelect == 'Rock' && computerSelect == 'Paper') ||
     (playerSelect == 'Paper' && computerSelect == 'Scissors') ||
     (playerSelect == 'Scissors' && computerSelect == 'Rock')) {
-        return ('You Lose! ' + computerSelect + ' beats ' + playerSelect)
+        console.log('You Lose! ' + computerSelect + ' beats ' + playerSelect);
+        computerScore++;
     }
 
-    else if (playerSelect == computerSelect); {
-        return ('Draw!')
+    else {
+        console.log('Draw!');
     }
 }
 
 //play 5 round of rps
 function game() {
     for (let i = 0; i < 5; i++) {
-        computerSelect = computerPlay();
-        playerSelect = prompt("Choose Rock, Paper, or Scissors!");
+        const computerSelect = computerPlay();
+        const playerSelect = prompt("Choose Rock, Paper, or Scissors!");
         playRound(playerSelect, computerSelect);
-        console.log(playRound(playerSelect, computerSelect))
+        console.log(playerScore);
+        console.log(computerScore);
+    }
+
+    if (playerScore > computerScore) {
+        console.log('Player Win!');
+        console.log("Refresh!");
+    }
+
+    else if (playerScore < computerScore) {
+        console.log('Computer Win!');
+        console.log("Refresh!");
+    }
+    
+    else {
+        console.log('Draw!');
+        console.log("Refresh!");
     }
 }
-
-
 
 /*
 const playerSelect = "Scissors";
