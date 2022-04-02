@@ -28,31 +28,43 @@ function playRound(playerSelect, computerSelect) {
     }
 }
 
-//play 5 round of rps
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.classList);
+    });
+});
+
 function game() {
-    for (let i = 0; i < 5; i++) {
-        const computerSelect = computerPlay();
-        const playerSelect = prompt("Choose Rock, Paper, or Scissors!");
-        playRound(playerSelect, computerSelect);
-        console.log(playerScore);
-        console.log(computerScore);
-    }
 
-    if (playerScore > computerScore) {
-        console.log('Player Win!');
-        console.log("Refresh!");
-    }
-
-    else if (playerScore < computerScore) {
-        console.log('Computer Win!');
-        console.log("Refresh!");
-    }
-    
-    else {
-        console.log('Draw!');
-        console.log("Refresh!");
-    }
 }
+
+// //play 5 round of rps
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         const computerSelect = computerPlay();
+//         const playerSelect = prompt("Choose Rock, Paper, or Scissors!");
+//         playRound(playerSelect, computerSelect);
+//         console.log(playerScore);
+//         console.log(computerScore);
+//     }
+
+//     if (playerScore > computerScore) {
+//         console.log('Player Win!');
+//         console.log("Refresh!");
+//     }
+
+//     else if (playerScore < computerScore) {
+//         console.log('Computer Win!');
+//         console.log("Refresh!");
+//     }
+    
+//     else {
+//         console.log('Draw!');
+//         console.log("Refresh!");
+//     }
+// }
 
 /*
 const playerSelect = "Scissors";
