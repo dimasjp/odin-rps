@@ -37,19 +37,14 @@ const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
 
-btnRock.addEventListener('click', function(e) {
-    playerC.textContent = "Rock";
-});
+btnRock.addEventListener('click', () => playerChoose('Rock'));
+btnPaper.addEventListener('click', () => playerChoose('Paper'));
+btnScissors.addEventListener('click', () => playerChoose('Scissors'));
 
-btnPaper.addEventListener('click', function(e) {
-    playerC.textContent = "Paper";
-});
-
-btnScissors.addEventListener('click', function(e) {
-    playerC.textContent = "Scissors";
-});
-
-
+function playerChoose(playerSelect) {
+    const computerSelect = computerPlay();
+    playRound(playerSelect, computerSelect);
+}
 
 
 
