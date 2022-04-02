@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
+
 //computer play random rps
 function computerPlay() {
     let choices = ["Rock", "Paper", "Scissors"];
@@ -28,17 +29,29 @@ function playRound(playerSelect, computerSelect) {
     }
 }
 
-const buttons = document.querySelectorAll('button')
+//UI
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        alert(button.classList);
-    });
+
+const playerC = document.querySelector('.playerC');
+const btnRock = document.querySelector('#btnRock');
+const btnPaper = document.querySelector('#btnPaper');
+const btnScissors = document.querySelector('#btnScissors');
+
+btnRock.addEventListener('click', function(e) {
+    playerC.textContent = "Rock";
 });
 
-function game() {
+btnPaper.addEventListener('click', function(e) {
+    playerC.textContent = "Paper";
+});
 
-}
+btnScissors.addEventListener('click', function(e) {
+    playerC.textContent = "Scissors";
+});
+
+
+
+
 
 // //play 5 round of rps
 // function game() {
