@@ -2,37 +2,37 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-//computer play random rps
+//Computer play random RPS
 function computerPlay() {
     let choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-//play one round of rps
+//Play one round of RPS
 function playRound(playerSelect, computerSelect) {
+    let roundResult = "";
+
     if ((playerSelect == 'Rock' && computerSelect == 'Scissors') ||
         (playerSelect == 'Paper' && computerSelect == 'Rock') ||
         (playerSelect == 'Scissors' && computerSelect == 'Paper')) {
-            console.log('You Win! ' + playerSelect + ' beats ' + computerSelect);
-            playerScore++;
+            roundResult = 'playerWin';
+            playerScore += 1;
     }
 
     else if ((playerSelect == 'Rock' && computerSelect == 'Paper') ||
-    (playerSelect == 'Paper' && computerSelect == 'Scissors') ||
-    (playerSelect == 'Scissors' && computerSelect == 'Rock')) {
-        console.log('You Lose! ' + computerSelect + ' beats ' + playerSelect);
-        computerScore++;
+        (playerSelect == 'Paper' && computerSelect == 'Scissors') ||
+        (playerSelect == 'Scissors' && computerSelect == 'Rock')) {
+            roundResult = 'computerWin';
+            computerScore += 1;
     }
 
     else {
-        console.log('Draw!');
+        roundResult = 'draw';
     }
+    resultText(roundResult, playerSelect, computerSelect);
 }
 
-//UI
-
-
-const playerC = document.querySelector('.playerC');
+//Button
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
 const btnScissors = document.querySelector('#btnScissors');
@@ -44,6 +44,23 @@ btnScissors.addEventListener('click', () => playerChoose('Scissors'));
 function playerChoose(playerSelect) {
     const computerSelect = computerPlay();
     playRound(playerSelect, computerSelect);
+}
+
+//Text Content
+const result = document.querySelector('#result');
+
+function resultText(roundResult, playerSelect, computerSelect) {
+    if (roundResult === 'playerWin') {
+        result.textContent = ('You Win! ' + playerSelect + ' beats ' + computerSelect);
+    }
+
+    else if (roundResult === 'computerWin') {
+        result.textContent = ('You Lose! ' + computerSelect + ' beats ' + playerSelect);
+    }
+
+    else {
+        result.textContent = ('Draw!');
+    }
 }
 
 
@@ -73,9 +90,3 @@ function playerChoose(playerSelect) {
 //         console.log("Refresh!");
 //     }
 // }
-
-/*
-const playerSelect = "Scissors";
-const computerSelect = computerPlay();
-console.log(playRound(playerSelect, computerSelect));
-*/
