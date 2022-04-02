@@ -1,0 +1,41 @@
+.main {
+    text-align: center;
+
+}
+
+#playerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.btn {
+    border: none;
+    background: none;
+}
+
+.btn-square {
+    width: 160px;
+    height: 160px;
+  }
+
+.iconRock, .iconPaper, .iconScissors {
+    font-size: 50px;
+    padding: 0;
+}
+
+#computerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#banner {
+    width: 250px;
+    height: 150px;
+    border: 5px solid black;
+    margin: 0 auto;
+    border-radius: 10px;
+}
