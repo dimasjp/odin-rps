@@ -49,7 +49,8 @@ function playRound(playerSelect, computerSelect) {
     else {
         roundResult = 'draw';
     }
-    computerChoose(computerSelect);
+    playerPick(playerSelect);
+    computerPick(computerSelect);
     resultText(roundResult, playerSelect, computerSelect);
     scoreDisplay(playerScore, computerScore);
 };
@@ -97,7 +98,7 @@ function gameOver(playerScore, computerScore) {
 };
 
 //Animation
-function computerChoose(computerSelect) {
+function computerPick(computerSelect) {
     if (computerSelect === 'Rock') {
         removePlay();
         compRock.classList.add('compPlay');
@@ -112,9 +113,30 @@ function computerChoose(computerSelect) {
     }
 };
 
+function playerPick(playerSelect) {
+    if (playerSelect === 'Rock') {
+        removePlayerPlay();
+        btnRock.classList.add('playerPlay');
+    }
+    if (playerSelect === 'Paper') {
+        removePlayerPlay();
+        btnPaper.classList.add('playerPlay');
+    }
+    if (playerSelect === 'Scissors') {
+        removePlayerPlay();
+        btnScissors.classList.add('playerPlay');
+    }
+};
+
 function removePlay() {
     compRock.classList.remove('compPlay');
     compPaper.classList.remove('compPlay');
     compScissors.classList.remove('compPlay');
+}
+
+function removePlayerPlay() {
+    btnRock.classList.remove('playerPlay');
+    btnPaper.classList.remove('playerPlay');
+    btnScissors.classList.remove('playerPlay');
 }
 

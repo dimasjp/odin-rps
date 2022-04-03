@@ -65,11 +65,11 @@ body {
     cursor: pointer;
 }
 
-.compRock, .compPaper, .compScissors {
+.compRock, .compPaper, .compScissors, .btnRock, .btnPaper, .btnScissors {
     transition: 0.5s;
 }
 
-.compPlay {
+.compPlay, .playerPlay {
     transform: scale(1.5);
 }
 
