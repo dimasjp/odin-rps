@@ -29,9 +29,6 @@ function playRound(playerSelect, computerSelect) {
             playerScore += 1;
             if (playerScore === 5) {
                 gameOver(playerScore, computerScore);
-                btnRock.removeEventListener('click', () => playerChoose('Rock'));
-                btnPaper.removeEventListener('click', () => playerChoose('Paper'));
-                btnScissors.removeEventListener('click', () => playerChoose('Scissors'));
             }
     }
 
@@ -42,9 +39,6 @@ function playRound(playerSelect, computerSelect) {
             computerScore += 1;
             if (computerScore === 5) {
                 gameOver(playerScore, computerScore);
-                btnRock.removeEventListener('click', () => playerChoose('Rock'));
-                btnPaper.removeEventListener('click', () => playerChoose('Paper'));
-                btnScissors.removeEventListener('click', () => playerChoose('Scissors'));
             }
     }
 
@@ -88,10 +82,12 @@ function gameOver(playerScore, computerScore) {
     result.remove();
     if (playerScore === 5) {
         resultFinal.textContent = ('🎉You Win!');
+        playerButtons.style = 'pointer-events: none';
     }
 
     else if (computerScore === 5) {
         resultFinal.textContent = ('🤖You Lose!');
+        playerButtons.style = 'pointer-events: none';
     }
 };
 

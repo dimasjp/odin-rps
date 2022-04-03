@@ -23,11 +23,15 @@ body {
     padding: 40px;
 }
 
-#btn {
+#btnPlayer, #btnComp {
     border: none;
     background: none;
     width: 100px;
     height: 100px;
+}
+
+#btnPlayer {
+    cursor: pointer;
 }
 
 .iconRock, .iconPaper, .iconScissors {
