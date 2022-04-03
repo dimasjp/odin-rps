@@ -2,10 +2,14 @@
 const btnRock = document.querySelector('.btnRock');
 const btnPaper = document.querySelector('.btnPaper');
 const btnScissors = document.querySelector('.btnScissors');
+const compRock = document.querySelector('.compRock');
+const compPaper = document.querySelector('.compPaper');
+const compScissors = document.querySelector('.compScissors');
 const result = document.querySelector('#result');
 const title = document.querySelector('#title');
 const resultFinal = document.querySelector('#resultFinal');
 const scores = document.querySelector('#scores');
+const buttons = document.querySelectorAll('button');
 
 
 let playerScore = 0;
@@ -45,6 +49,7 @@ function playRound(playerSelect, computerSelect) {
     else {
         roundResult = 'draw';
     }
+    computerChoose(computerSelect);
     resultText(roundResult, playerSelect, computerSelect);
     scoreDisplay(playerScore, computerScore);
 };
@@ -75,7 +80,7 @@ function resultText(roundResult, playerSelect, computerSelect) {
 };
 
 function scoreDisplay(playerScore, computerScore) {
-    scores.textContent = (playerScore + ' vs ' + computerScore);
+    scores.textContent = ('🧑 ' + playerScore + ' vs ' + computerScore + ' 🤖');
 }
 
 function gameOver(playerScore, computerScore) {
@@ -91,28 +96,25 @@ function gameOver(playerScore, computerScore) {
     }
 };
 
-// //play 5 round of rps
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//         const computerSelect = computerPlay();
-//         const playerSelect = prompt("Choose Rock, Paper, or Scissors!");
-//         playRound(playerSelect, computerSelect);
-//         console.log(playerScore);
-//         console.log(computerScore);
-//     }
+//Animation
+function computerChoose(computerSelect) {
+    if (computerSelect === 'Rock') {
+        removePlay();
+        compRock.classList.add('compPlay');
+    }
+    if (computerSelect === 'Paper') {
+        removePlay();
+        compPaper.classList.add('compPlay');
+    }
+    if (computerSelect === 'Scissors') {
+        removePlay();
+        compScissors.classList.add('compPlay');
+    }
+};
 
-//     if (playerScore > computerScore) {
-//         console.log('Player Win!');
-//         console.log("Refresh!");
-//     }
+function removePlay() {
+    compRock.classList.remove('compPlay');
+    compPaper.classList.remove('compPlay');
+    compScissors.classList.remove('compPlay');
+}
 
-//     else if (playerScore < computerScore) {
-//         console.log('Computer Win!');
-//         console.log("Refresh!");
-//     }
-    
-//     else {
-//         console.log('Draw!');
-//         console.log("Refresh!");
-//     }
-// }

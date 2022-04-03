@@ -59,3 +59,21 @@ body {
     justify-content: center;
     gap: 15px;
 }
+
+#resultFinal {
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.compRock, .compPaper, .compScissors {
+    transition: 0.5s;
+}
+
+.compPlay {
+    transform: scale(1.5);
+}
+
+.subtitle {
+    font-size: 26px;
+    font-weight: bold;
+}
